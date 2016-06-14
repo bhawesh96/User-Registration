@@ -1,0 +1,199 @@
+<html>
+<head>
+	<meta name ="viewport" content="device-width,initial-scale=1">
+	<title>MIT Forum</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	
+	<style>
+
+	input[type=text], input[type=password]
+{
+    width: 100%;
+    padding: 12px 20px;
+    padding-left: 8px;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    border: none;
+    background-color: #404048;
+    color: white;
+    border-radius: 5px;
+
+}
+#required{
+	margin: -1px;
+	font-size: 11px;
+}
+
+.button
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0px;
+ 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-sizing: border-box;
+    border: none;
+    background-color: #404048;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+   
+}
+.button#okbutton{
+	width:20%;
+}
+.button:hover{
+	 -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+	background-color: grey;
+}
+
+
+
+input:hover{
+	 -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+	background-color: grey;
+	}
+
+
+	input[type=text]:focus{
+		border: 2px solid black;
+		 
+	}
+
+.form, #forgotpassdiv,#forgotpassdiv2,#changepassdiv,#wrongansdiv,#error{
+	margin: auto;
+	width: 20%;
+}
+
+div#securityquediv{
+	margin:auto;
+	margin-top: 5%;
+	margin-left: 40%;
+	width: 100%;
+}
+
+a.forgotpass{
+	text-decoration: none;
+	color: black;
+}
+
+a.forgotpass:hover{
+	text-decoration: underline;
+}
+
+div#forgotpassdiv,#forgotpassdiv2,#securityquediv,#changepassdiv,#wrongansdiv,#error{
+	display: none;
+}
+
+
+@media only screen and (max-width: 510px)
+{
+	.form, #forgotpassdiv,#forgotpassdiv2,#changepassdiv,#wrongansdiv,#securityquediv,#error{
+		width:90%;
+	}
+}
+
+
+
+	</style>
+</head>
+<body>
+	<ul>
+			<li><a href='#'>Link1</a></li>
+			<li class='food'>
+				<a href='food.html' class='foodbtn'>Link2</a>
+				<div class='drpdwn-content'>
+					<a href='#'>xyz</a>
+					<a href='#'>xyz</a>
+					<a href='#'>abc</a>
+					<a href='#'>def</a>
+					<a href='#'>dhds</a>
+				</div>
+			</li>
+			<li class='academics'>
+				<a href='academics.html' class='academicsbtn'>link3</a>
+				<div class='drpdwn-content'>
+					<a href='#'>1</a>
+					<a href='#'>2</a
+					<a href='#'>3</a>
+					<a href='#'>4</a>
+				</div>
+			</li>
+			<li><a href='#'>Link</a></li>
+			<li><a href='search.html'>Search</a></li>
+			<li style="float:right; padding-right:20px;" ><a href='signup.html'>SIGN UP</a></li>
+			<li style="float:right;" ><a class='active' href='signin.html'>SIGN IN</a></li>
+			
+		
+		</ul>		
+
+		<p id='title' style="text-shadow: 1px 1px 6px #000000;"> SIGN IN </p>
+
+<div class='form'>
+	<form id='form' action='signin.php' method='post'>
+		<input type='text' name='email' placeholder="Email" required></input>
+  		<input type='password' name='password' placeholder="Password" required></input>
+		<button class='button' type='submit' name='signinsubmit' value='Submit' >Sign In</button>
+		<a class='forgotpass' href='#'> Forgot Password?</a>
+	</form>
+</div>
+
+ 
+<div id='forgotpassdiv'>
+	<input type="text" name="forgotemail" id='forgotemail' placeholder="Email" required></input>
+	<button class='button' id='okbutton' type='submit' name='forgotsubmitemail' value='Submit'>Ok</button>
+</div>
+
+
+	<div id='securityquediv'></div>
+<div id='forgotpassdiv2'>
+
+	<input type='text' name='securityans' id='securityans' placeholder='Security Answer' autocomplete="off"></input>
+	<button class='button' type='submit' id='submitanswer' name='forgotsubmit' value='Submit'>Submit</button>
+</div>
+
+<div id='wrongansdiv'></div>
+
+<div id='changepassdiv'>
+  		<input type='password' id="password" name='newpassword' placeholder="New Password" required onkeyup="passStrength()"></input>
+
+  		<img style='margin-left:0px;' src='images/show.png'></img>
+  		<p style='margin-left:10px;display: inline;' id='showpass'>Show Password</p>
+
+  	  	<p style="float:right;margin-top:-35px; margin-right:-70px;" id='passstrength'></p>
+
+  		<input type='password' id='confirmpassword' name='confirmnewpassword' placeholder="Re-enter Password" required onkeyup="passConfirm()"></input>
+
+  		<p style="float:right;margin-top:-35px; margin-right:-110px;" id='passconfirm'></p>
+
+		<button class='button' id='newpasssubmit' type='submit' name='newpasssbumit' value='Submit'>Update</button>
+
+</div>
+
+<div id='error'></div>
+
+<div style='padding-bottom: 200px;'></div>
+
+	<div class='footer'>
+		<ul class='footerul'>
+			<li id='footerli'>sdhsj</li></br>
+			<li id='footerli'>sdsd</li></br>
+			<li id='footerli'>erer</li></br>
+			<li id='footerli'>dfgf</li></br>
+			<li id='footerli'>er4rff</li>
+		</ul>
+		</div>
+		<div class='developer'>
+		Designed by Bhawesh Bhansali
+		</div>
+
+
+
+
+	<script src='jq.js'></script>
+	<script src='signin.js'></script>
+	<script src='signup.js'></script>
+	
+</body>
+</html>

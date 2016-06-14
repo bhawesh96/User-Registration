@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+<script src='jq.js'></script>
+<script>
+
+$(document).ready(function(e){
+
+	$("#search").keyup(function()
+	{
+		$('#here').show();
+		var x = $(this).val();
+		$.ajax(
+		{
+			type:'GET',
+			url:'search.php',
+			data:'q='+x,
+			success:function(data)
+			{
+				$('#here').html(data);
+			}
+			,
+		});
+	});
+});
+
+
+</script>
+<style>
+
+	
+	input[type=search]
+{
+    width: 100%;
+    padding: 12px 20px;
+    padding-left: 8px;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    border: none;
+    background-color: #404048;
+    color: white;
+    border-radius: 5px;
+
+}
+
+
+.form{
+	margin: auto;
+	width: 40%;
+
+}
+
+
+</style>
+</head>
+<body>
+	<ul>
+			<li><a href='#'>Link1</a></li>
+			<li class='food'>
+				<a href='food.html' class='foodbtn'>Link2</a>
+				<div class='drpdwn-content'>
+					<a href='#'>xyz</a>
+					<a href='#'>xyz</a>
+					<a href='#'>abc</a>
+					<a href='#'>def</a>
+					<a href='#'>dhds</a>
+				</div>
+			</li>
+			<li class='academics'>
+				<a href='academics.html' class='academicsbtn'>link3</a>
+				<div class='drpdwn-content'>
+					<a href='#'>1</a>
+					<a href='#'>2</a>
+					<a href='#'>3</a>
+					<a href='#'>4</a>
+				</div>
+			</li>
+			<li><a href='#'>Link</a></li>
+			<li><a class='active' href='search.html'>Search</a></li>
+			<li style="float:right; padding-right:20px;" ><a href='signup.html'>SIGN UP</a></li>
+			<li style="float:right;" ><a href='signin.html'>SIGN IN</a></li>
+			
+		
+		</ul>		
+
+		<p id='title' style="text-shadow: 1px 1px 6px #000000;"> SEARCH </p>
+
+<div class='form'>
+	<form action='searchx.php' method='get'>
+		<input type='search' name='search' id='search'> 
+		<div id='here'></div>
+  		
+
+<div style='padding-bottom: 400px;'></div>
+
+	<div class='footer'>
+		<ul class='footerul'>
+			<li id='footerli'>sdhsj</li></br>
+			<li id='footerli'>sdsd</li></br>
+			<li id='footerli'>erer</li></br>
+			<li id='footerli'>dfgf</li></br>
+			<li id='footerli'>er4rff</li>
+		</ul>
+		</div>
+		<div class='developer'>
+		Designed by Bhawesh Bhansali
+		</div>
+
+	
+</body>
+</html>
