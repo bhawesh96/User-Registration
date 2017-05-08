@@ -1,3 +1,5 @@
-# clandestine
+# User Registration / Login System
 
-Import the MySQL database.
+Frontend : HTML5, CSS3, JQuery
+Backend : PHP and MySQL.
+
